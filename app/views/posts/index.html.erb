@@ -1,0 +1,10 @@
+<h1>수연이의 페이스북</h1>
+<% @posts.each do |p| %>
+    <a href="/posts/show/<%=p.id%>"><%=p.title%></a><br>
+    <form action="/posts/destroy/<%=p.id%>" method="POST">
+        <button type="submit" class="btn btn-primary btn-sm">삭제</button>
+        <button type="submit" class="btn btn-primary btn-sm" formaction="/posts/edit/<%=p.id%>" formmethod="post">수정</button>
+    </form>
+    <hr>
+<%end%>
+<a href="/posts/new" class="btn btn-primary btn-lg btn-block">작성하기</a><hr>
